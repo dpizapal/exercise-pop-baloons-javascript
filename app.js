@@ -25,8 +25,8 @@ const render = () => {
          onClick="popBalloon(${position});"
          ></div>`; // <--- render each balloon
     });
-
-    document.querySelector("#balloon-count").innerHTML = ballons.filter(b => b !== null).length; // <-- render the balloon count into the DOM
+    let activeBalloons = ballonsMap.filter(b => b !== null).length;
+    document.querySelector("#balloon-count").innerHTML = activeBalloons; // <-- render the balloon count into the DOM
     document.querySelector("#balloon-map").innerHTML = ballons.join(''); // <-- render the balloons into the DOM
 
     if(activeBalloons == 0) window.location.reload(); // <--- reload website when no more balloons are left
